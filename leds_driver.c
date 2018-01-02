@@ -33,12 +33,10 @@ static  int led_open(struct inode *pinode, struct file *pfile) {
     return 0;
 }
 
-
 //成功返回0，失败返回负数
 static  int led_release(struct inode *pinode, struct file *pfile) {
     return 0;
 }
-
 
 //成功返回读取的字节数量，失败返回负数
 static  ssize_t led_read(struct file *pfile, char __user *buf, size_t size, loff_t * off) {
@@ -346,9 +344,8 @@ static int __init mydev_init(void) {
 
     return 0;
 
-error_ioremap:
-    //删除/dev/目录下的设备文件
-    for ( i = 0 ; i < count ; i++ ) {
+error_ioremap:   
+    for ( i = 0 ; i < count ; i++ ) {   //删除/dev/目录下的设备文件
         device_destroy(myclass, dev_nr + i);
     }
 

@@ -1,4 +1,4 @@
-obj-m := leds_drv.o
+obj-m := leds_driver.o
 KDIR  := /a_linux_station/kernel/linux-3.5/
 #模块最终存放
 rootfs_dir :=/a_linux_station/rootfs/home/
